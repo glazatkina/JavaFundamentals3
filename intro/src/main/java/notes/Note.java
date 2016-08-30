@@ -17,7 +17,7 @@ public class Note {
      * @param message
      *          text of record.
      */
-    void addRecord(String message) {
+    public void addRecord(String message) {
         if (size < notes.length) {
             notes[size] = new Records(message);
             size++;
@@ -38,7 +38,7 @@ public class Note {
      *          new text for record.
      * @return true - editing successful, false - row index out of array's indexes.
      */
-    boolean editRecord(int row, String message) {
+    public boolean editRecord(int row, String message) {
         if (row > size) {
             return false;
         } else {
@@ -53,7 +53,7 @@ public class Note {
      *          record's index.
      * @return true - deleting succesful, false - row index out of array's indexes.
      */
-    boolean deleteRecord(int row) {
+    public boolean deleteRecord(int row) {
         if (row > size) {
             return false;
         } else {
