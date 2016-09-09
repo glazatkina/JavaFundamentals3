@@ -1,12 +1,12 @@
 /**
  * Created by Natalia Glazkina on 06.09.2016.
  */
-public class Pen {
-    private String name;
+public class Pen extends Supplies{
+    private String ink;
     private int price;
 
-    public Pen(String nName, int nPrice) {
-        name = nName;
+    public Pen(String nInk, int nPrice) {
+        ink = nInk;
         price = nPrice;
     }
 
@@ -26,20 +26,23 @@ public class Pen {
         if (price != pen.price) {
             return false;
         }
-        if (null == name) {
-            return (null == pen.name);
+        if (null == ink) {
+            return (null == pen.ink);
         } else {
-             return name.equals(pen.name);
+             return ink.equals(pen.ink);
         }
     }
 
     @Override
     public int hashCode() {
-        return (int) (13 * price + ((name == null) ? 0 : name.hashCode()));
+        return 13 * price + ((ink == null) ? 0 : ink.hashCode());
     }
 
     @Override
-    public String toString() {
-        return "This is Pen \"" + name + "\". It's price is " + Integer.toString(price);
+    public String toString() { return "Pen:\n" + "Color: " + ink + "\tPrice: " + Integer.toString(price);    }
+
+    @Override
+    public String getInformation() {
+        return toString();
     }
 }
