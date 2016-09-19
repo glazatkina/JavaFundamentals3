@@ -3,4 +3,5 @@
  */
 public abstract class Supplies {
     public abstract String getInformation();
+    public abstract int getPrice();
 }

@@ -45,4 +45,9 @@ public class Pen extends Supplies{
     public String getInformation() {
         return toString();
     }
+
+    @Override
+    public int getPrice() {
+        return price;
+    }
 }
