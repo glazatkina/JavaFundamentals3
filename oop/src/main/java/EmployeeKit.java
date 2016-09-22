@@ -23,6 +23,7 @@ public class EmployeeKit {
         return price;
     }
 
+    @Override
     public String toString() {
         String ans = "Employee Kit #" + number + "\n##########################\n";
         for (Supplies item: kit) {

@@ -13,10 +13,11 @@ public class EmployeeKitTest {
     public void calculatingCost() throws Exception {
         testKit = new EmployeeKit(1);
         Supplies[] officeSupplies = new Supplies[4];
-        officeSupplies[0] = new Pen("black", 10);
-        officeSupplies[1] = new Pen("red", 15);
-        officeSupplies[2] = new Paper(200, 500);
-        officeSupplies[3] = new Scissors(70, true);
+        officeSupplies[0] = new Pen("black", 10, "Parker");
+        officeSupplies[1] = new Pen("red", 15, "BIC");
+        officeSupplies[2] = new Paper(200, 500, "Svetocopy");
+        officeSupplies[3] = new Scissors(70, true, "Centrum");
+
         for (Supplies item: officeSupplies) {
             testKit.addItem(item);
         }
@@ -27,11 +28,30 @@ public class EmployeeKitTest {
     @Test
     public void kitToString() throws Exception {
         Supplies[] officeSupplies = new Supplies[4];
-        officeSupplies[0] = new Pen("black", 10);
-        officeSupplies[1] = new Pen("red", 15);
-        officeSupplies[2] = new Paper(200, 500);
-        officeSupplies[3] = new Scissors(70, true);
-        testKit = new EmployeeKit(0,officeSupplies);
+        officeSupplies[0] = new Pen("black", 10, "Parker");
+        officeSupplies[1] = new Pen("red", 15, "BIC");
+        officeSupplies[2] = new Paper(200, 500, "Svetocopy");
+        officeSupplies[3] = new Scissors(70, true, "Centrum");
+        testKit = new EmployeeKit(4, officeSupplies);
+
         System.out.println(testKit.toString());
+    }
+
+    @Test
+    public void deleteItemFromKit() throws Exception {
+        Supplies[] officeSupplies = new Supplies[4];
+        officeSupplies[0] = new Pen("black", 10, "Parker");
+        officeSupplies[1] = new Pen("red", 15, "BIC");
+        officeSupplies[2] = new Paper(200, 500, "Svetocopy");
+        officeSupplies[3] = new Scissors(70, true, "Centrum");
+        testKit = new EmployeeKit(4, officeSupplies);
+
+        //try to delete one item twice
+        assertThat(testKit.deleteItem(officeSupplies[0]), is(true));
+        assertThat(testKit.deleteItem(officeSupplies[0]), is(false));
+        //method equals() was overrided: new object will be equal to old, because all fields equals
+        assertThat(testKit.deleteItem(new Pen("red", 15, "BIC")), is(true));
+        //method equals() was not overrided: new object not equal, but all fields equals
+        assertThat(testKit.deleteItem(new Paper(200, 500, "Svetocopy")), is(false));
     }
 }

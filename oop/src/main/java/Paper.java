@@ -4,15 +4,17 @@
 public class Paper extends Supplies {
     private int price;
     private int count;
+    private String name;
 
-    public Paper(int price, int count) {
+    public Paper(int price, int count, String name) {
         this.price = price;
         this.count = count;
+        this.name = name;
     }
 
     @Override
     public String getInformation() {
-        return "Paper:\n" + "Count sheets: " + count + "\tPrice: " + Integer.toString(price);
+        return "Paper: " + name + "\n" + "Count sheets: " + count + "\tPrice: " + Integer.toString(price);
     }
 
     public int getPrice() {
@@ -29,5 +31,9 @@ public class Paper extends Supplies {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public String getName() {
+        return name;
     }
 }

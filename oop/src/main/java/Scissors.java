@@ -4,15 +4,17 @@
 public class Scissors extends Supplies {
     private int price;
     private boolean isLeftHanded;
+    private String name;
 
-    public Scissors(int price, boolean isLeftHanded) {
+    public Scissors(int price, boolean isLeftHanded, String name) {
         this.price = price;
         this.isLeftHanded = isLeftHanded;
+        this.name = name;
     }
 
     @Override
     public String getInformation() {
-        return "Scissors:\n" + "Left handed: " + isLeftHanded + "\tPrice: " + Integer.toString(price);
+        return "Scissors: " + name + "\n" + "Left handed: " + isLeftHanded + "\tPrice: " + Integer.toString(price);
     }
 
     public int getPrice() {
@@ -25,5 +27,9 @@ public class Scissors extends Supplies {
 
     public boolean isLeftHanded() {
         return isLeftHanded;
+    }
+
+    public String getName() {
+        return name;
     }
 }
