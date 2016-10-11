@@ -1,6 +1,7 @@
 /**
  * Created by Natalia Glazkina on 06.09.2016.
  */
+@SuppressWarnings({"WeakerAccess", "DefaultFileTemplate"})
 public class Pen extends Supplies{
     private String ink;
     private int price;
@@ -25,11 +26,8 @@ public class Pen extends Supplies{
         }
         Pen pen = (Pen) obj;
 
-        if (price != pen.price) {
-            return false;
-        }
+        return price == pen.price && isEquals(name, pen.name) && isEquals(ink, pen.ink);
 
-        return isEquals(name, pen.name) && isEquals(ink, pen.ink);
     }
 
     @Override
@@ -57,8 +55,6 @@ public class Pen extends Supplies{
     private static boolean isEquals(String str1, String str2) {
         if (str1 == null)
             return str2 == null;
-        if (str2 == null)
-            return false;
-        return str1.equals(str2);
+        return str2 != null && str1.equals(str2);
     }
 }

@@ -6,8 +6,9 @@ import java.util.Comparator;
 /**
  * Created by glazkina on 26.09.2016.
  */
+@SuppressWarnings("DefaultFileTemplate")
 public class ComparingTest {
-    Comparator<Supplies> comp;
+    private Comparator<Supplies> comp;
 
     @Test
     public void comparingByName() throws Exception {
@@ -29,7 +30,7 @@ public class ComparingTest {
         sorting(comp, "SORTING BY PRICE, THEN BY NAME");
     }
 
-    void sorting(Comparator<Supplies> comp, String sortingName) {
+    private void sorting(Comparator<Supplies> comp, String sortingName) {
         System.out.println(sortingName);
         System.out.println("______________________");
 

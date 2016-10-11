@@ -1,6 +1,7 @@
 /**
  * Created by Natalia Glazkina on 10.09.2016.
  */
+@SuppressWarnings({"WeakerAccess", "DefaultFileTemplate"})
 public class Scissors extends Supplies {
     private int price;
     private boolean isLeftHanded;

@@ -1,8 +1,10 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Natalia Glazkina on 19.09.2016.
  */
+@SuppressWarnings({"DefaultFileTemplate", "WeakerAccess"})
 public class EmployeeKit {
     private ArrayList<Supplies> kit;
     private int number;
@@ -10,9 +12,7 @@ public class EmployeeKit {
     public EmployeeKit(int num, Supplies ... sup) {
         number = num;
         kit = new ArrayList<>();
-        for (Supplies item : sup) {
-            kit.add(item);
-        }
+        Collections.addAll(kit, sup);
     }
 
     public int getPrice() {

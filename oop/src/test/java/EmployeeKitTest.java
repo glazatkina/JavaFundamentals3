@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Natalia Glazkina on 19.09.2016.
  */
+@SuppressWarnings("DefaultFileTemplate")
 public class EmployeeKitTest {
     private EmployeeKit testKit;
 
