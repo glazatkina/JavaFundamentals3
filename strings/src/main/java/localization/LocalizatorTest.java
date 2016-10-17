@@ -1,6 +1,5 @@
 package localization;
 
-import java.util.Enumeration;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
