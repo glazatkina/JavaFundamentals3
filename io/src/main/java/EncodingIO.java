@@ -6,6 +6,7 @@ import java.nio.charset.Charset;
  *
  * @author: Natalia Glazkina
  */
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class EncodingIO {
     public static void main(String[] args) {
         try (FileInputStream fileReader = new FileInputStream("io\\src\\main\\resources\\testUTF8.txt");
@@ -15,6 +16,7 @@ public class EncodingIO {
         ) {
             StringBuilder stringBuilder = new StringBuilder();
             int next;
+            inputStreamReader.read();
             while ((next = inputStreamReader.read()) >= 0) {
                 stringBuilder.append((char)next);
             }
