@@ -7,10 +7,9 @@ import java.io.Serializable;
  *
  * @author: Natalia Glazkina
  */
-@SuppressWarnings("WeakerAccess")
+@SuppressWarnings({"WeakerAccess", "unused"})
 public class Movie implements Serializable{
     Movie() {}
-    @SuppressWarnings("unused")
     enum Genre {COMEDY, HORROR, THRILLER, MUSICAL, ANIMATION}
     private Actor[] mainRoles;
     private String title;

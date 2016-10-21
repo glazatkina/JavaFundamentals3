@@ -72,6 +72,7 @@ public class SerializationTest {
      * @return
      *          array of deserialised Movie's objects
      */
+    @SuppressWarnings("unused")
     private static Movie[] read(String fileName, int count) {
         Movie[] ans = new Movie[count];
         try (FileInputStream fileInputStream = new FileInputStream(fileName);

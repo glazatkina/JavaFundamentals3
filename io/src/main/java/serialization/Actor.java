@@ -7,7 +7,7 @@ import java.io.Serializable;
  *
  * @author: Natalia Glazkina
  */
-@SuppressWarnings("WeakerAccess")
+@SuppressWarnings({"WeakerAccess", "unused"})
 public class Actor implements Serializable{
     Actor() {}
     enum Gender {MALE, FEMALE}
